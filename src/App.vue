@@ -43,6 +43,12 @@ const editToDo = (toDo) => {
   toDos.value = toDos.value.map(t =>  t === toDo ? {...t, editing: !t.editing } : t)
 }
 
+const handleCheck = (el) => {
+  const id = el.target.dataset.checkboxId
+  const checkbox = document.body.querySelector(`input[type="checkbox"][id='${id}']`)
+  checkbox?.click()
+}
+
 </script>
 
 <template>
@@ -66,10 +72,10 @@ const editToDo = (toDo) => {
         <h3>TODO list:</h3>
         <div class="flex-col flex gap-2">
           <div v-for="todo in sortedToDos" class="flex gap-2 items-center">
-            <label>
-              <input type="checkbox" v-model="todo.done" />
+            <input :id="todo.createdAt" type="checkbox" v-model="todo.done" />
+            <label class="break-all flex-1" v-on="!todo.editing ? { click: handleCheck } : {}">
+              <input :data-checkbox-id="todo.createdAt" :disabled="!todo.editing" v-model="todo.content" :class="`bg-transparent border-none outline-none w-full ${todo.done ? 'line-through' : ''}`" />
             </label>
-            <span class="break-all flex-1"><input :disabled="!todo.editing" v-model="todo.content" :class="`bg-transparent border-none outline-none w-full ${todo.done ? 'line-through' : ''}`" /></span>
             <button class="ml-4" @click="editToDo(todo)">
               <font-awesome-icon :class="`text-yellow-300 opacity-50 hover:opacity-30 ${todo.editing && 'opacity-100 hover:opacity-80'}`" icon="fa-pen-to-square" />
             </button>
