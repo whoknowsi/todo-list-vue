@@ -34,6 +34,10 @@ const addToDo = () => {
   toDoInput.value = ''
 }
 
+const removeToDo = (toDo) => {
+  toDos.value = toDos.value.filter(t => t !== toDo)
+}
+
 </script>
 
 <template>
@@ -56,13 +60,16 @@ const addToDo = () => {
       <section class="w-full p-6 bg-gray-800 rounded-lg flex flex-col gap-4">
         <h3>TODO list:</h3>
         <div class="flex-col flex gap-2">
-          <div v-for="todo in sortedToDos" :class="`flex gap-2 ${todo.done && 'line-through'}`">
+          <div v-for="todo in sortedToDos" :class="`flex gap-2 items-center ${todo.done && 'line-through'}`">
             <label>
               <input type="checkbox" v-model="todo.done" />
             </label>
-            <div>
+            <div class="flex-1">
               <span class="break-all">{{ todo.content }}</span>
             </div>
+            <button class="ml-2" @click="removeToDo(todo)">
+              <font-awesome-icon class="text-red-600 hover:opacity-60" icon="fa-trash-can"/>
+            </button>
           </div>
         </div>
       </section>
