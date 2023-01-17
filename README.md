@@ -1,7 +1,40 @@
-# Vue 3 + Vite
+# Task List
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a task list application built with Vue.js 3 and Vite using Tailwind. It allows users to easily create, mark as completed, edit and delete tasks. The application saves the data on the local storage, so the tasks will be saved even when the user closes the browser.
 
-## Recommended IDE Setup
+Mobile:
+![Mobile screenshot](screenshots/mobile.png)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Desktop:
+![Desktop screenshot](screenshots/desktop.png)
+
+## Features
+- Create new tasks
+- Mark tasks as completed
+- Edit existing tasks
+- Delete tasks
+
+## Deployment
+The application is deployed on Netlify, you can access the application by visiting the following link: [Link to the deployed application](https://whoknows-todo-list-vue.netlify.app/)
+
+## Development
+
+To run the application locally:
+
+1. Clone the repository
+
+```git clone https://github.com/whoknowsi/todo-list-vue.git```
+
+2. Install the dependencies
+
+```npm install```
+
+3. Start the development server
+
+```npm run```
+
+4. Open the application in your browser at localhost:5173
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md)
