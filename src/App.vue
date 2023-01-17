@@ -38,8 +38,8 @@ const addToDo = () => {
 
 <template>
   <main class="pt-8 flex justify-center">
-    <div class="flex-col flex items-center gap-4 w-96">
-      <h2 class="text-lg mb-4">Hello,<input class="px-2 py-1 border-none outline-none bg-gray-900 rounded font-bold w-16 min-w-max" type="text" placeholder="Your name..." v-model="username" /></h2>
+    <div class="flex-col flex gap-4 w-96">
+      <h2 class="text-lg ml-4">Hello,<input class="px-2 py-1 border-none outline-none bg-gray-900 rounded font-bold w-48 " type="text" placeholder="Your name..." v-model="username" /></h2>
       <section class="w-full p-6 bg-gray-800 rounded-lg">
         <h3>Create a TODO:</h3>
         <form class="flex flex-col mt-2" @submit.prevent="addToDo">
@@ -73,6 +73,6 @@ const addToDo = () => {
 
 <style>
 body {
-	@apply bg-gray-900; color: #fff;
+	@apply bg-gray-900; color: #fff; padding: 1em;
 }
 </style>
